@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Supermercado+One&display=swap");
+
+:root {
+  --light-green: #4dc54d;
+  --dark-green: #128312;
+  --orange: #fe7345;
+  --grey: #726f6f;
+  --dark-grey: #494a4b;
+  --black: black;
+  --white: white;
+  --container-background: rgba(238, 201, 201, 0.863);
+  --container-width: 420px;
+  --radius-3: 15px;
+  --radius-2: 10px;
+  --radius-1: 5px;
+  --input-width: 70%;
+  --input-border: 4px dashed var(--dark-green);
+  --f-mercado: "Supermercado One";
+  --f-abel: "Abel";
+  --logo-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  --container-height: 450px;
+  --border-1-dark-grey: 1px solid var(--dark-grey);
+  --border-2-dar-grey: 2px solid var(--dark-grey);
+  --transition-cubic-beizer: transform 0.4s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Supermercado One";
+}
+
+body {
+  min-height: 100vh;
+  background: #4dc54d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.container {
+  min-width: var(--container-width);
+  border-radius: var(--radius-3);
+  margin: auto;
+  min-height: var(----container-height);
+  background: var(--container-background);
+  padding: 25px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title__img {
+  width: 90px;
+  height: 70px;
+}
+.title__content {
+  font-size: 20px;
+  text-transform: capitalize;
+  background: var(--dark-green);
+  display: flex;
+  border-radius: var(--logo-radius);
+  align-items: center;
+  justify-content: center;
+  transform: rotate(3deg);
+  padding: 8px;
+}
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.form__title {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+form {
+  width: 90%;
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+form input {
+  border: none;
+  background: none;
+  border-bottom: 4px dashed var(--dark-green);
+  margin-right: 20px;
+  width: 70%;
+  font-family: "Abel";
+  font-weight: 700;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::placeholder {
+  font-weight: 500;
+}
+
+form button {
+  height: 38px;
+  position: relative;
+  transform: rotate(4deg);
+  border-radius: var(--radius-1);
+  transition: var(--transition-cubic-beizer);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+form button::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 80px;
+  height: 100%;
+  transform: scaleY(1.1);
+  border: var(--border-1-dark-grey);
+  border-radius: inherit;
+  transform-origin: top;
+  background-image: url(data:image/png;base64,R0lGODlhBAAEAIABAAAAAAAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5NUY1OENCRDdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5NUY1OENCRTdDMDYxMUUyOTEzMEE1MEM5QzM0NDVBMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk1RjU4Q0JCN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk1RjU4Q0JDN0MwNjExRTI5MTMwQTUwQzlDMzQ0NUEzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAQAAAQAsAAAAAAQABAAAAgYEEpdoeQUAOw==);
+  background-color: var(--orange);
+  transition: var(--transition-cubic-beizer);
+}
+
+form button:focus {
+  outline: none;
+}
+
+form button:active {
+  height: 35px;
+  margin-top: 3px;
+  transform: translateY(4px);
+  padding-bottom: 0;
+}
+
+form button span {
+  position: relative;
+  display: block;
+  font-size: 16.5px;
+  padding: 0.34em 0.84em;
+  border: var(--border-2-dar-grey);
+  border-radius: inherit;
+  background-color: var(--white);
+}
+
+.todo-list {
+  margin-top: 30px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 10px;
+  border-radius: var(--radius-1);
+  max-width: 90%;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.todo__content {
+  font-family: var(--f-abel);
+  font-weight: 700;
+  padding: 5px 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.checkbox-btn {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.checkbox-btn__empty {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--dark-grey);
+  padding: 5px;
+  border-radius: 3px;
+}
+.checkbox-btn__icon {
+  width: 20px;
+  height: 20px;
+  transform: scale(1.6);
+  margin-top: -2px;
+  margin-left: 5px;
+  display: block;
+}
+
+.todo__checkbox {
+  border: var(--border-2-dar-grey);
+  outline: none;
+}
+
+.todo__deleteBtn {
+  margin: 0 -8px 0 auto;
+  padding: 0 8px;
+  border: none;
+  background: none;
+  transform: rotate(45deg) scale(2);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.todo__deleteBtn:hover {
+  color: var(--grey);
+}
+
+.none {
+  display: none !important;
+}
+.block {
+  display: block !important;
+}
+.completed {
+  background-color: var(--dark-green);
+  animation: copmletedAnimation 0.75s ease-in-out both;
+}
+@keyframes copmletedAnimation {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: rotateX(-30deg);
+  }
+  70% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
