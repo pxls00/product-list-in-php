@@ -13,6 +13,10 @@
 <body>
     <div class="container">
         <?php
+            $obj = 12.8;
+            echo is_double($obj);
+            echo is_float($obj);
+            echo gettype($obj);
             require('./components/logo.php')
         ?>
         <?php 
