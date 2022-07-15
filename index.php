@@ -7,23 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="/index.css">
-    <script src="./js/index.js" defer></script>
 </head>
 
 <body>
     <div class="container">
-        <?php
-            $obj = 12.8;
-            echo is_double($obj);
-            echo is_float($obj);
-            echo gettype($obj);
-            require('./components/logo.php')
-        ?>
         <?php 
-            require('./components/form.php')
-        ?>
-        <?php
-            require('./components/todo-list.php')
+            require('./components/logo.php');
+            require('./components/form.php');
+            echo "<h2 class='title'>PRODUCTS</h3>";
+            require('./components/todo-list.php');
         ?>
     </div>
 </body>
