@@ -21,7 +21,8 @@
   --container-height: 450px;
   --border-1-dark-grey: 1px solid var(--dark-grey);
   --border-2-dar-grey: 2px solid var(--dark-grey);
-  --transition-cubic-beizer: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-cubic-beizer: transform 0.4s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 * {
@@ -44,7 +45,8 @@ body {
   padding: 50px;
 }
 .container {
-  min-width: var(--container-width);
+  max-width: var(--container-width);
+  width: 100%;
   border-radius: var(--radius-3);
   margin: auto;
   min-height: var(----container-height);
@@ -115,7 +117,9 @@ form {
   width: 90%;
   display: flex;
   padding: 0 20px;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 form input {
@@ -123,7 +127,7 @@ form input {
   background: none;
   border-bottom: 4px dashed var(--dark-green);
   margin-right: 20px;
-  width: 70%;
+  width: 100%;
   font-family: "Abel";
   font-weight: 700;
   font-size: 16px;
@@ -142,14 +146,38 @@ form input::placeholder {
   width: 100%;
 }
 
+.description {
+  background: none;
+  resize: none;
+  height: 110px;
+  font-size: 16px;
+  font-family: var(--f-abel);
+  font-weight: 700;
+  padding: 5px;
+  border-color: var(--dark-green);
+  border-width: 2px;
+}
+
+.description:focus {
+  outline: none;
+}
+
+.description::-webkit-scrollbar {
+  width: 0;
+}
+
 .create-todo {
   height: 38px;
   position: relative;
   transform: rotate(4deg);
   border-radius: var(--radius-1);
-  transition: var(--transition-cubic-beizer);
+  transition: var(--transition-cubic-beizer) all;
   background-color: transparent;
   cursor: pointer;
+  width: 80px;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .create-todo::before {
@@ -176,7 +204,7 @@ form input::placeholder {
   height: 35px;
   margin-top: 3px;
   transform: translateY(4px);
-  padding-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .create-todo span {
@@ -187,6 +215,7 @@ form input::placeholder {
   border: var(--border-2-dar-grey);
   border-radius: inherit;
   background-color: var(--white);
+  width: 80px;
 }
 
 .todo-list {
@@ -194,6 +223,7 @@ form input::placeholder {
 }
 
 .todo {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 5px 15px 5px 10px;
@@ -201,12 +231,24 @@ form input::placeholder {
   max-width: 90%;
   margin: 10px auto;
   cursor: pointer;
+  gap: 10px;
 }
 .todo__content {
   font-family: var(--f-abel);
   font-weight: 700;
   padding: 5px 10px;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 0;
+}
+.todo__description {
+  font-family: var(--f-abel);
+  font-weight: 400;
+  display: block;
+  color: var(--grey);
+  font-size: 15px;
+  width: 90%;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -239,6 +281,8 @@ form input::placeholder {
 }
 
 .todo__deleteBtn {
+  position: absolute;
+  right: 10px;
   margin: 0 -8px 0 auto;
   padding: 0 8px;
   border: none;
@@ -246,12 +290,20 @@ form input::placeholder {
   transform: rotate(45deg) scale(2);
   cursor: pointer;
   transition: 0.25s;
+  color: black;
+  text-decoration: none;
 }
 
 .todo__deleteBtn:hover {
   color: var(--grey);
 }
 
+.update-btn {
+  right: 35px;
+  transform: scale(1);
+  margin-top: 5px;
+  color: black;
+}
 
 .none {
   display: none !important;
